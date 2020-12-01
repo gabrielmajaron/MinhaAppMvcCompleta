@@ -3,8 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DevIO.App.ViewModels
 {
@@ -26,12 +25,12 @@ namespace DevIO.App.ViewModels
         public string Descricao { get; set; }
 
         // IFormFile possui as propriedades do arquivo:
-        // nome, tamanho, extensao etc
-       // public IFormFile ImageUpload { get; set; }
+        // nome, tamanho, extensao etc     
+        [DisplayName("Imagem")]
+        public IFormFile ImageUpload { get; set; }
         public string Imagem { get; set; }
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public decimal Valor { get; set; }
-
         
         [DisplayName("Data de Cadastro")]
         [ScaffoldColumn(false)]
@@ -41,6 +40,10 @@ namespace DevIO.App.ViewModels
         [DisplayName("Ativo?")]
         public bool Ativo { get; set; }
 
+        [NotMapped]
         public FornecedorViewModel Fornecedor { get; set; }
+
+        [NotMapped]
+        public IEnumerable<FornecedorViewModel> Fornecedores { get; set; }
     }
 }

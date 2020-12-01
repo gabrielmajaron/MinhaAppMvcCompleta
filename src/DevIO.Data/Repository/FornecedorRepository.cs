@@ -27,5 +27,26 @@ namespace DevIO.Data.Repository
                 .Include(e => e.Endereco)
                 .FirstOrDefaultAsync(_id => _id.Id == id);
         }
+        
+        public void Detach(List<Fornecedor> f)
+        {
+            Db.ChangeTracker.AcceptAllChanges();
+            
+            //foreach (EntityEntry dbEntityEntry in Db.ChangeTracker.Entries())
+            //{
+                //if (dbEntityEntry.Entity != null)
+                //{
+                    //Db.Entry(dbEntityEntry).State = EntityState.Detached;
+                //}
+            //}
+            //EntityEntry e = Db.Entry(obj);
+
+            foreach(Fornecedor _f in f)
+            {
+                Db.Entry(_f).State = EntityState.Detached;
+            }
+
+            Db.SaveChanges();
+        }
     }
 }

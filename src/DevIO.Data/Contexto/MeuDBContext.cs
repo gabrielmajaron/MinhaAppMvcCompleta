@@ -1,6 +1,6 @@
-﻿using DevIO.Business.Models;
+﻿using System.Linq;
+using DevIO.Business.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace DevIO.Data.Contexto
 {
@@ -11,6 +11,9 @@ namespace DevIO.Data.Contexto
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
+
+       
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -15,9 +15,9 @@ namespace DevIO.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
+                .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("DevIO.Business.Models.Endereco", b =>
                 {
@@ -27,17 +27,14 @@ namespace DevIO.Data.Migrations
 
                     b.Property<string>("Bairro")
                         .IsRequired()
-                        .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("Cep")
                         .IsRequired()
-                        .HasMaxLength(8)
                         .HasColumnType("varchar(8)");
 
                     b.Property<string>("Cidade")
                         .IsRequired()
-                        .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("Complemento")
@@ -46,7 +43,6 @@ namespace DevIO.Data.Migrations
 
                     b.Property<string>("Estado")
                         .IsRequired()
-                        .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
                     b.Property<Guid>("FornecedorId")
@@ -54,12 +50,10 @@ namespace DevIO.Data.Migrations
 
                     b.Property<string>("Logradouro")
                         .IsRequired()
-                        .HasMaxLength(200)
                         .HasColumnType("varchar(200)");
 
                     b.Property<string>("Numero")
                         .IsRequired()
-                        .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
@@ -81,13 +75,11 @@ namespace DevIO.Data.Migrations
 
                     b.Property<string>("Documento")
                         .IsRequired()
-                        .HasMaxLength(14)
                         .HasColumnType("varchar(14)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("varchar(200)");
 
                     b.Property<int>("TipoFornecedor")
                         .HasColumnType("int");
@@ -111,7 +103,6 @@ namespace DevIO.Data.Migrations
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasMaxLength(1000)
                         .HasColumnType("varchar(1000)");
 
                     b.Property<Guid>("FornecedorId")
@@ -119,12 +110,10 @@ namespace DevIO.Data.Migrations
 
                     b.Property<string>("Imagem")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(200)
                         .HasColumnType("varchar(200)");
 
                     b.Property<decimal>("Valor")
@@ -143,8 +132,6 @@ namespace DevIO.Data.Migrations
                         .WithOne("Endereco")
                         .HasForeignKey("DevIO.Business.Models.Endereco", "FornecedorId")
                         .IsRequired();
-
-                    b.Navigation("Fornecedor");
                 });
 
             modelBuilder.Entity("DevIO.Business.Models.Produto", b =>
@@ -153,15 +140,6 @@ namespace DevIO.Data.Migrations
                         .WithMany("Produtos")
                         .HasForeignKey("FornecedorId")
                         .IsRequired();
-
-                    b.Navigation("Fornecedor");
-                });
-
-            modelBuilder.Entity("DevIO.Business.Models.Fornecedor", b =>
-                {
-                    b.Navigation("Endereco");
-
-                    b.Navigation("Produtos");
                 });
 #pragma warning restore 612, 618
         }

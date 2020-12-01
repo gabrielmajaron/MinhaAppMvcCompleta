@@ -21,6 +21,7 @@ namespace DevIO.Business.Interfaces
         Task Atualizar(TEntity entity);
         Task Remover(Guid id);
 
+
         // essa função recebe por parâmetro uma função lambda
         // que busca qualquer entidade por qualquer parametro
         Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate);

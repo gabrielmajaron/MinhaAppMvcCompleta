@@ -1,3 +1,7 @@
+C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.csprojAssemblyReference.cache
+C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.AssemblyInfoInputs.cache
+C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.AssemblyInfo.cs
+C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.csproj.CoreCompileInputs.cache
 C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Data.deps.json
 C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Data.runtimeconfig.json
 C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Data.runtimeconfig.dev.json
@@ -5,10 +9,6 @@ C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\bin\Debug\netcore
 C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Data.pdb
 C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Business.dll
 C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\bin\Debug\netcoreapp3.1\DevIO.Business.pdb
-C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.csprojAssemblyReference.cache
-C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.AssemblyInfoInputs.cache
-C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.AssemblyInfo.cs
-C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.csproj.CoreCompileInputs.cache
 C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.csproj.CopyComplete
 C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.dll
 C:\Users\gabri\source\repos\MinhaAppMvcCompleta\src\DevIO.Data\obj\Debug\netcoreapp3.1\DevIO.Data.pdb

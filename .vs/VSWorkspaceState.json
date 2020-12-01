@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\DevIO.App",
+    "\\src\\DevIO.App\\Controllers"
   ],
-  "SelectedNode": "\\MinhaAppMvcCompleta.sln",
+  "SelectedNode": "\\src\\DevIO.App\\Controllers\\FornecedoresController.cs",
   "PreviewInSolutionExplorer": false
 }

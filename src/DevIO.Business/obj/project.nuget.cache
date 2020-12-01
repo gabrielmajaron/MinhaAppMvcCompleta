@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KOjj2LPkYruf7uisyvQIXmzM/LNLWNbsOmXUolRbq+axhd+dl8qR6GIx+Odvfl35Inc8jbACAIFQwa9g9xe1Jw==",
+  "dgSpecHash": "BDO/hB89yHmDvDdED5zP8dieCP7kzxCLfXLdvhoZHWeQ4u3NI/QG7n6hTGcVS2QaPc6om5/FpxyYKxXTKQnbWw==",
   "success": true,
   "projectFilePath": "C:\\Users\\gabri\\source\\repos\\MinhaAppMvcCompleta\\src\\DevIO.Business\\DevIO.Business.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\gabri\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.0\\microsoft.aspnetcore.http.features.5.0.0.nupkg.sha512",
-    "C:\\Users\\gabri\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
-    "C:\\Users\\gabri\\.nuget\\packages\\system.io.pipelines\\5.0.0\\system.io.pipelines.5.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

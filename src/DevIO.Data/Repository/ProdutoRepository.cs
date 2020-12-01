@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DevIO.Data.Repository
@@ -14,13 +13,19 @@ namespace DevIO.Data.Repository
     {
 
         public ProdutoRepository(MeuDBContext context) : base(context) { }
-        
+
+        // procura pelo fornecedor de um determinado produto. Retorna o objeto Produto com o fornecedor já dentro dele
+        /*
         public async Task<Produto> ObterProdutoFornecedor(Guid id)
         {
-            // procura pelos fornecedores
-            // fazendo um inner join com o id do produto
             return await Db.Produtos.AsNoTracking()
                 .Include(f => f.Fornecedor)
+                .FirstOrDefaultAsync(p => p.Id == id);
+        }*/
+
+        public async Task<Produto> ObterProdutoFornecedor(Guid id)
+        {
+            return await Db.Produtos.AsNoTracking().Include(f => f.Fornecedor)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
 
@@ -41,8 +46,25 @@ namespace DevIO.Data.Repository
                 return await Db.Produtos.AsNoTracking()
                 .Include(f => f.Fornecedor.Id == fornecedorId)
                 .ToListAsync();*/
-                
+        }
 
+
+        
+        public void Detach(object obj)
+        {
+            Db.ChangeTracker.AcceptAllChanges();
+            
+            //foreach (EntityEntry dbEntityEntry in Db.ChangeTracker.Entries())
+            //{
+            //    if (dbEntityEntry.Entity != null)
+            //    {
+            //        Db.Entry(dbEntityEntry).State = EntityState.Detached;
+            //    }
+            //}
+            //EntityEntry e = Db.Entry(obj);
+
+            Db.Entry(obj).State = EntityState.Detached;
+            Db.SaveChanges();
         }
     }
 }

@@ -25,6 +25,12 @@ namespace DevIO.Data.Repository
             DbSet = db.Set<TEntity>();
         }
 
+        /*
+        public void DetachLocal(TEntity entity)
+        {
+            Db.Entry(entity).State = EntityState.Detached;
+        }*/
+
         // virtual: permite que as classes filhas deêm override nos metodos, caso precise
         public async Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate)
         {
@@ -32,7 +38,6 @@ namespace DevIO.Data.Repository
             // O Asp começa a rastrear (tracking) esse objeto para fazer verificacoes (mudanças de estado por exemplo)
             // E consome processamento e tempo
             // Com o AsNoTracking o processamento fica mais rápido
-
 
             return await DbSet.AsNoTracking().Where(predicate).ToListAsync();
         }
@@ -44,7 +49,7 @@ namespace DevIO.Data.Repository
 
         public virtual async Task<List<TEntity>> ObterTodos()
         {
-            return await DbSet.ToListAsync();
+            return await DbSet.AsNoTracking().ToListAsync();
         }
 
         public virtual async Task Adicionar(TEntity entity)
@@ -55,13 +60,11 @@ namespace DevIO.Data.Repository
             await SaveChanges();
         }
 
-        // OBS. METODO UPDATE NAO EXISTE??
-        // VER MAIS PRA FRENTE SE O METODO ATUALIZAR SERA MESMO UTILIZADO
         public virtual async Task Atualizar(TEntity entity)
-        {
-            throw new NotImplementedException();
+        {            
+            DbSet.Update(entity);
+            await SaveChanges();
         }
-
        
         public virtual async Task Remover(Guid id)
         {

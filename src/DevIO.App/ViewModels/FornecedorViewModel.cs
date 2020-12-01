@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -29,6 +30,7 @@ namespace DevIO.App.ViewModels
         /* Relacionamento do E.F. */
         // Informa ao E.F. que o fornecedor tem uma relação de 
         // 1 para muitos com o produto
+        [NotMapped]
         public IEnumerable<ProdutoViewModel> Produtos { get; set; }
 
     }
